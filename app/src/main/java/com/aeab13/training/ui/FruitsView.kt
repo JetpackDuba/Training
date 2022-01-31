@@ -1,4 +1,4 @@
-package com.aeab13.training
+package com.aeab13.training.ui
 
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.*
@@ -11,9 +11,10 @@ import androidx.compose.runtime.*
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
+import com.aeab13.training.fruits
 
 @Composable
-fun PracticeSolution(fruitsList: List<String> = fruits) {
+fun FruitsView(fruitsList: List<String>) {
     var filter by remember {
         mutableStateOf("")
     }
@@ -98,7 +99,7 @@ fun SearchField(filter: String, onValueChange: (String) -> Unit, modifier: Modif
                     imageVector = Icons.Default.Clear,
                     contentDescription = "Clear",
                     modifier = Modifier.clickable {
-                            onValueChange("")
+                        onValueChange("")
                     }
 
                 )
@@ -130,8 +131,6 @@ fun Fruit(fruit: String, onFruitClicked: () -> Unit) {
 
 @Preview
 @Composable
-fun PracticeSolutionPreview() {
-    PracticeSolution()
+fun FruitsViewPreview() {
+    FruitsView(fruits)
 }
-
-

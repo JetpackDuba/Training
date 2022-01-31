@@ -1,4 +1,4 @@
-package com.aeab13.training
+package com.aeab13.training.ui
 
 import androidx.compose.foundation.layout.Column
 import androidx.compose.material.Button
