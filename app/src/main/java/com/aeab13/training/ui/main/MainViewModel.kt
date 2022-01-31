@@ -8,8 +8,9 @@ import kotlinx.coroutines.launch
 import com.aeab13.training.repositories.FruitsRepository
 
 class MainViewModel : ViewModel() {
-    private val _mainViewState = MutableStateFlow<MainViewState>(MainViewState.Loading)
     private val fruitsRepository = FruitsRepository()
+
+    private val _mainViewState = MutableStateFlow<MainViewState>(MainViewState.Loading)
     val mainViewState: StateFlow<MainViewState> = _mainViewState
 
     fun loadData() = viewModelScope.launch {
