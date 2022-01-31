@@ -7,11 +7,13 @@ import androidx.activity.viewModels
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.collectAsState
 import androidx.compose.runtime.getValue
+import dagger.hilt.android.AndroidEntryPoint
 import com.aeab13.training.ui.ErrorView
 import com.aeab13.training.ui.FruitsView
 import com.aeab13.training.ui.LoadingView
 import com.aeab13.training.ui.theme.TrainingTheme
 
+@AndroidEntryPoint
 class MainActivity : ComponentActivity() {
     private val viewModel by viewModels<MainViewModel>()
 

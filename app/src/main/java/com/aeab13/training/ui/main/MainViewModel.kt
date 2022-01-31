@@ -2,13 +2,17 @@ package com.aeab13.training.ui.main
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
+import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.launch
 import com.aeab13.training.repositories.FruitsRepository
+import javax.inject.Inject
 
-class MainViewModel : ViewModel() {
-    private val fruitsRepository = FruitsRepository()
+@HiltViewModel
+class MainViewModel @Inject constructor(
+    private val fruitsRepository: FruitsRepository
+) : ViewModel() {
 
     private val _mainViewState = MutableStateFlow<MainViewState>(MainViewState.Loading)
     val mainViewState: StateFlow<MainViewState> = _mainViewState
