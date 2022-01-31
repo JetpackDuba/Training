@@ -10,7 +10,7 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Training">
         <activity
-            android:name="com.aeab13.training.MainActivity"
+            android:name="com.aeab13.training.ui.main.MainActivity"
             android:exported="true"
             android:label="@string/app_name"
             android:theme="@style/Theme.Training.NoActionBar">

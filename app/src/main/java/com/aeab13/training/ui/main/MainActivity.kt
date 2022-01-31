@@ -5,6 +5,11 @@ import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.activity.viewModels
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.collectAsState
+import androidx.compose.runtime.getValue
+import com.aeab13.training.ui.ErrorView
+import com.aeab13.training.ui.FruitsView
+import com.aeab13.training.ui.LoadingView
 import com.aeab13.training.ui.theme.TrainingTheme
 
 class MainActivity : ComponentActivity() {
@@ -24,7 +29,18 @@ class MainActivity : ComponentActivity() {
 
     @Composable
     fun Practice() {
-        // Todo get the data from the view model and update the UI
-        // There are 3 views to represent each UI state: LoadingView, ErrorView, FruitsView.
+        val mainViewState by viewModel.mainViewState.collectAsState()
+
+        when(val state = mainViewState) {
+            MainViewState.Loading -> {
+                LoadingView()
+            }
+            is MainViewState.Complete -> {
+                FruitsView(fruitsList = state.fruitsList)
+            }
+            is MainViewState.Error -> {
+                ErrorView(state.exception)
+            }
+        }
     }
 }
