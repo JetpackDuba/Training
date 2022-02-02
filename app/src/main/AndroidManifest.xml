@@ -10,16 +10,27 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Training">
         <activity
-            android:name=".ui.main.MainActivity"
+            android:name=".ui.states_example.StatesActivity"
             android:exported="true"
-            android:label="@string/app_name"
-            android:theme="@style/Theme.Training.NoActionBar">
+            android:label="@string/title_activity_states"
+            android:theme="@style/Theme.Training">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+<!--        <activity-->
+<!--            android:name=".ui.main.MainActivity"-->
+<!--            android:exported="true"-->
+<!--            android:label="@string/app_name"-->
+<!--            android:theme="@style/Theme.Training.NoActionBar">-->
+<!--            <intent-filter>-->
+<!--                <action android:name="android.intent.action.MAIN" />-->
+
+<!--                <category android:name="android.intent.category.LAUNCHER" />-->
+<!--            </intent-filter>-->
+<!--        </activity>-->
     </application>
 
 </manifest>
